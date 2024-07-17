@@ -26,7 +26,7 @@ app.get('/collectibles/:index',(req,res)=>{
         { name: 'autographed picture of a dog', price: 10 },
         { name: 'vintage 1970s yogurt SOLD AS-IS', price: 0.99 }
       ];
-    if(!isNaN(req.params.index) && req.params.index >=0 && req.params.index <= collectibles.length){
+    if(!isNaN(req.params.index) && req.params.index >=0 && req.params.index < collectibles.length){
         res.send(`So, you want the ${collectibles[req.params.index].name}? For ${collectibles[req.params.index].price}, it can be yours!`);
     }
     else{
